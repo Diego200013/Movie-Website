@@ -1,0 +1,274 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>MOVIES ZONE</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+            background-color: #BEBBCD;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            background-color:#F7DEDE;
+            border-radius:20px;
+            box-shadow: #999 8px 8px ;
+
+
+            
+        }
+        .movie-tile:hover {
+            background-color:#7EB4B4;
+            cursor: pointer;
+
+          
+
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        .navbar{
+       
+        box-shadow: #00f 5px 5px 10px;
+        background: -webkit-linear-gradient(top,black, #0cf);
+        border-radius:10px;
+        padding-bottom:10px;
+        }
+        #title1{
+
+        color:white;
+        text-shadow:black 10px 10px 10px;
+        text-align:center;
+        font:bold 1.4em Verdana, Geneva, sans-serif;
+        margin-left: 500px;
+
+
+        }
+
+        #title1:hover{
+         color:black;
+         text-shadow:white 10px 10px 10px;
+
+
+        }
+
+
+        h2{
+
+        background-color:D6CA3F;
+        border-radius:10px;
+       }
+
+       #director{
+
+        font:bold 1.1em Verdana, Geneva, sans-serif;
+       }
+
+       #story{
+
+      
+       background-color:#E3EFF1;
+       text-align:justify;
+       }
+
+       #img_films{
+
+         border: 3px solid black;
+         outline: green dotted thick;
+
+
+
+
+       }
+
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container pb-3">
+      <div class="navbar  navbar-fixed-top  " role="navigation">
+        <div class="container">
+          <div class="navbar-header ">
+            <div class="navbar-brand"><span id="title1">MOVIES ZONE</span></div>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="Bj4gS1JQzjk" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="http://es.web.img3.acsta.net/pictures/14/11/07/15/51/086299.jpg" width="220" height="342">
+    <h2>TOY STORY</h2>
+    <p id="director">Director: Josh Cooley</p>
+    <p><em>Launch Date: June,20th 2019</em></p>
+    <p id="story">Sheriff Woody and Star Command Buzz Lightyear, along with the rest of their inseparable roommates, were handed over by an Andy about to enter the university to a little girl named Bonnie, who received this excited giftBut now the toys are back in charge. What new adventures await you in this fourth installment? </p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="UrdfmlhYRfs" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://vignette1.wikia.nocookie.net/james-camerons-avatar/images/a/a7/Caratula_de_Avatar.png/revision/latest?cb=20150218032222&path-prefix=es" width="220" height="342">
+    <h2>AVATAR</h2>
+    <p id="director">Director: James Cameron</p>
+    <p><em>Launch Date: December,19th 2009</em></p>
+    <p id="story">A moon of the planet Polyphemus inhabited by a humanoid race called na 'viwith which humans are in conflict because one of their clans is seated around a gigantic tree that covers an immensevein of a highly valued mineral and that would be the solution to the energy problems of the Earth: the unobtainium </p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="zCy5WQ9S4c0" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://pics.filmaffinity.com/titanic-321994924-large.jpg" width="220" height="342">
+    <h2>TITANIC</h2>
+    <p id="director">Director:  James Cameron</p>
+    <p><em>Launch Date: February,13rd 1998</em></p>
+    <p id="story">('It relates the relationship of Jack Dawson and Rose DeWitt Bukater, two young people who know each other and  fall in love aboard the ocean liner RMS Titanic on its maiden voyage from Southampton, England, to New York, USA. UU.,In April 1912,Belonging to different social classes',)</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="ys9njXUXCIk" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://www.booktopia.com.au/http_coversbooktopiacomau/big/9781742752259/red-dog.jpg" width="220" height="342">
+    <h2>RED DOG: TRUE BLUE</h2>
+    <p id="director">Director:Kriv Stenders</p>
+    <p><em>Launch Date: December,26th 2016</em></p>
+    <p id="story">True Blue explores the famous Australian legend of a dog that supposedly wandered all over Australia during the 70s.After his father dies and his mother is sent to a mental hospital, a child goes to live in the hospital. farm of his grandfather  After a storm the boy finds a puppy covered in blue paint and convinces his grandfather so that this canine stays with him.</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="vn9mMeWcgoM" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="http://i.imgur.com/4hvGoxS.jpg" width="220" height="342">
+    <h2>JURASSIC WORLD</h2>
+    <p id="director">Director:Juan Antonio Bayona</p>
+    <p><em>Launch Date: June,22nd 2018</em></p>
+    <p id="story">After the disappearance of the Jurassic World theme park on Nublar Island, dinosaurs roam freely around the island  for four years until a volcanic eruption threatens their existence. Claire Dearing, former park administrator, now founded the Dinosaur Protection Group, an organization dedicated to saving dinosaurs,Claire recruits Owen Grady.</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="AWgLSlxOAt4" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTA2MTU1NTkxOV5BMl5BanBnXkFtZTgwNjk4MjE0MjI@._V1_SY1000_CR0,0,648,1000_AL_.jpg" width="220" height="342">
+    <h2>WONDER</h2>
+    <p id="director">Director: Stephen Chbosky</p>
+    <p><em>Launch Date: November,16th 2017</em></p>
+    <p id="story">Uggie Pullman (Jacob Tremblay) is a child born with a facial malformation. Now, after ten years of hospital in hospital and long periods in your home, you will have to face a great challenge: to attend school for the first time. Thanks to the support  of his parents, Isabel (Julia Roberts) and Nate (Owen Wilson), Auggie tried to fit together new classmates and teachers.</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="s7WuKdVhrmA" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://i.ytimg.com/vi/1MXHP4UaYHY/movieposter.jpg" width="220" height="342">
+    <h2>WIND RIVER</h2>
+    <p id="director">Director: Taylor Sheridan</p>
+    <p><em>Launch Date: August,4th 2017</em></p>
+    <p id="story">It is winter in the Wind River Indian Reservation in Wyoming (USA) When Cory Lambert, Fish and Wildlife Service agent, discovers the frozen body of Natalie Hanson, 18, without shoes and winter clothes and with the hose blood  Newbie FBI special agent Jane Banner arrives to determine if a murder has been committed. The next day, Jane discovers by Natalie's father that her daughter was dating a new boyfriend, but does not know the man's name or whereabouts</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="0JnRdfiUMa8" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="https://pics.filmaffinity.com/deadpool-834516798-large.jpg" width="220" height="342">
+    <h2>DEADPOOL</h2>
+    <p id="director">Director Tim Miller</p>
+    <p><em>Launch Date: February,11th 2016</em></p>
+    <p id="story">Wade Wilson begins to tell a taxi driver his story about how he is about to take revenge on the evil Francis,the man who ruined his face and wants him to return to normal in order to return to the woman he loves. In the same way that he tries to pay the free ride to the taxi driver, Wade gives some loving advice to the taxi driver, which includes  kidnapping his girlfriend's other suitor and then killing the guy. While I waited on the railings of a bridge for Francis's men to pass</p>
+    
+    
+</div>
+
+<div class="col-md-5 col-lg-4 movie-tile ml-3 text-center" data-trailer-youtube-id="gCcx85zbxz4" data-toggle="modal" data-target="#trailer">
+  
+    <img id="img_films" src="http://es.web.img3.acsta.net/pictures/17/08/25/11/58/463146.jpg" width="220" height="342">
+    <h2>BLADE RUNNER 2049</h2>
+    <p id="director">Director Ridley Scott</p>
+    <p><em>Launch Date: March,16th 1983</em></p>
+    <p id="story">Thirty years have passed since the events that occurred in Blade Runner (1982). Agent K (Ryan Gosling), a 'blade runner' fighter-Replicators of the Los Angeles Police Department, discovers a secret that has been buried for a long time and that has the potential to carry society into chaos.  research led him to the search for the legendary Rick Deckard (Harrison Ford), a former blade runner unknown whereabouts, who has been missing for 30 years.</p>
+    
+    
+</div>
+
+    </div>
+  </body>
+</html>
